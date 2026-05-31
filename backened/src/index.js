@@ -17,15 +17,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin:[
-      "http://localhost:5173",
-      "http://localhost:5174",
-      "https://realtimechatapplication.vercel.app",
-      "https://realtimechatapplication-b906jwftfr-himanshus-projects-0725c532.vercel.app",
-    ],
+    origin: true,
+    
     credentials: true,
   })
-);
+); 
 
 // routes
 app.use("/api/auth", authRoutes);
