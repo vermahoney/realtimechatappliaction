@@ -7,10 +7,14 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: function(origin, callback) {
+      callback(null, true); // ✅ allow all origins
+    },
     credentials: true,
   },
 });
+
+// rest of your code stays same...
 
 // store online users
 const userSocketMap = {}; // { userId: socketId }
