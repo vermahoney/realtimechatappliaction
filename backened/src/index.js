@@ -17,9 +17,8 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: true,
-    
-    credentials: true,
+    origin: 'https://realtimechatappliaction-b906jwtfr-himanshus-projects-0725c532.vercel.app',
+  credentials: true
   })
 ); 
 
